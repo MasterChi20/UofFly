@@ -1,4 +1,4 @@
-import scraper
+import Scraper
 import expedia
 import argparse
 import datetime
@@ -39,7 +39,7 @@ if __name__ == "__main__" :
 
 	date = args.date
 	busses = []
-	busses = scraper.peoria(formatDate)
+	busses = Scraper.peoria(formatDate)
 	flights = expedia.parse(source,destination,date)
 	pairings = []
 
@@ -47,7 +47,8 @@ if __name__ == "__main__" :
 		busTime = timeScorer(bus)
 		for flight in flights:
 			flightTime = timeScorer(flight.get('departure_time'))
-			if (flightTime - busTime) > 180:
+			if (flightTime - busTime) > 420 and (flightTime - busTime) < 600:
+				print(flightTime - busTime)
 				pairingCurrent = {
 				                    'departure_airport':flight.get('departure_airport'),
 									'departure_time':flight.get('departure_time'),
@@ -61,7 +62,9 @@ if __name__ == "__main__" :
 				}
 				pairings.append(pairingCurrent)
 	for i in pairings:
-		print()
+		print(len(pairings))
 		print(i)
+
+
 
 
