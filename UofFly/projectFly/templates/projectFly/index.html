@@ -8,41 +8,137 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="styles.css">
-
-    <!-- Custom JS -->
-    <script type="text/javascript" src="index.js"></script>
-
-    <!-- Load custom font -->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato"/>
-
     <title>U of Fly</title>
-  </head>
-  <body>
-    
-    <div class="container-fluid">
-        <div class = "row">
-            <div class="col-md-5" id="left"> 
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h1 id = "title">
-                            U of Fly
-                        </h1>
 
-                        <p id="infoPara">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- Bootstrap core CSS -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+<!--
+    <style>
+	.parallax {
+	  /* The image used */
+	  background-image: url("https://fortunedotcom.files.wordpress.com/2017/02/google-company-search-logo-fact-checking-truth-news.jpg");
+
+	  /* Set a specific height */
+	  min-height: 500px; 
+
+	  /* Create the parallax scrolling effect */
+	  background-attachment: fixed;
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	</style>
+-->
+  </head>
+
+  <body>
+   
+  	<div class="bg"></div>
+<div class="jumbotron">
+</div> 
+
+<div class="container" >
+  <form class="form-signin">
+	  <div class="text-center mb-4">
+
+         <img class="mb-4" src="https://png2.kisspng.com/sh/b19f74f95e12af01a6e87ada42539faf/L0KzQYm3UsE5N6RxfZH0aYP2gLBuTfFqeqFxedDuLXHsgrT5gfZ1NZ10f9G2Y3zsgH7okwQuaZp3iN5qbnWwg7rziP92baV5fZ8AYUi8dIG4hvQ1a5M2SZCBNkm6SYO6UcE2OWkAUKM6NUG7R4K9TwBvbz==/kisspng-airplane-aircraft-logo-clip-art-airplane-silhouette-5a89d01fd4cb11.6697923115189811518716.png" alt="" width="72" height="72">
+
+         <h1 class="h3 mb-3 font-weight-normal">UofFly</h1>
+
+         <p>From UIUC to the World.</p>
+      </div>
+
+      <div class="form-label-group" >
+        <input type="text" id="departure_airport" class="form-control" placeholder="Departure Aiport" required autofocus>
+        <label for="inputEmail">Departing Airport</label>
+      </div>
+
+      <div class="form-label-group">
+        <input type="text" id="arrival_airport" class="form-control" placeholder="Arrival Airport" required>
+        <label for="inputPassword">Arriving Airport</label>
+      </div>
+
+      <div class="form-label-group">
+        <input type="date" id="inputDate" class="form-control" placeholder="Enter Date" required>
+        <label for="inputPassword">Date of Departure</label>
+      </div>
+
+      <p>Choose what is more important to you. Cost vs Duration of flight.</p>
+
+      <div class="slidecontainer">
+  		<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+	  </div> <br>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Give Eco-Friendly Options.
+        </label>
+      </div>
+     <div class="button">
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Search Flights</button>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; Dhruv, Chirag, Nitish, Yatharth, Siddhant and Enactus</p>
+  	</div>
+    </form>
+</div>
+	<!--
+	    <form class="form-signin">
+	      <div class="text-center mb-4">
+
+      <!--
+
+      <div class="relative">
+      	<img class="mb-4" src="https://png2.kisspng.com/sh/b19f74f95e12af01a6e87ada42539faf/L0KzQYm3UsE5N6RxfZH0aYP2gLBuTfFqeqFxedDuLXHsgrT5gfZ1NZ10f9G2Y3zsgH7okwQuaZp3iN5qbnWwg7rziP92baV5fZ8AYUi8dIG4hvQ1a5M2SZCBNkm6SYO6UcE2OWkAUKM6NUG7R4K9TwBvbz==/kisspng-airplane-aircraft-logo-clip-art-airplane-silhouette-5a89d01fd4cb11.6697923115189811518716.png" alt="" width="600" height="600">
+      </div>
+
+      
+
+
+
+
+        <img class="mb-4" src="https://png2.kisspng.com/sh/b19f74f95e12af01a6e87ada42539faf/L0KzQYm3UsE5N6RxfZH0aYP2gLBuTfFqeqFxedDuLXHsgrT5gfZ1NZ10f9G2Y3zsgH7okwQuaZp3iN5qbnWwg7rziP92baV5fZ8AYUi8dIG4hvQ1a5M2SZCBNkm6SYO6UcE2OWkAUKM6NUG7R4K9TwBvbz==/kisspng-airplane-aircraft-logo-clip-art-airplane-silhouette-5a89d01fd4cb11.6697923115189811518716.png" alt="" width="72" height="72">
+
+        <h1 class="h3 mb-3 font-weight-normal">UofFly</h1>
+        <p>From UIUC to the World.</p>
+      </div>
+
+      <div class="form-label-group">
+        <input type="text" id="departure_airport" class="form-control" placeholder="Departure Aiport" required autofocus>
+        <label for="inputEmail">Departing Airport</label>
+      </div>
+
+      <div class="form-label-group">
+        <input type="text" id="arrival_airport" class="form-control" placeholder="Arrival Airport" required>
+        <label for="inputPassword">Arriving Airport</label>
+      </div>
+
+      <div class="form-label-group">
+        <input type="date" id="inputDate" class="form-control" placeholder="Enter Date" required>
+        <label for="inputPassword">Date of Departure</label>
+      </div>
+
+      <p>Choose what is more important to you. Cost vs Duration of flight.</p>
+
+      <div class="slidecontainer">
+  		<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+	  </div> <br>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Give Eco-Friendly Options.
+        </label>
+      </div>
+     <div class="button">
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Search Flights</button>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; Dhruv, Chirag, Nitish, Yatharth, Siddhant and Enactus</p>
+  	</div>
+    </form>
+-->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/design.js"></script>
   </body>
 </html>
