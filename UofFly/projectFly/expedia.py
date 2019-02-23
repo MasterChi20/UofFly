@@ -71,22 +71,6 @@ def parse(source,destination,date):
 						}
 						timings.append(flight_timing)
 			return timings
-			'''
-
-				flight_info={'stops':stop,
-					'ticket price':formatted_price,
-					'departure':departure,
-					'arrival':arrival,
-					'flight duration':total_flight_duration,
-					'airline':airline_name,
-					'plane':plane,
-					'timings':timings,
-					'plane code':plane_code
-				}
-				lists.append(flight_info)
-			sortedlist = sorted(lists, key=lambda k: k['ticket price'],reverse=False)
-			return sortedlist
-			'''
 		
 		except ValueError:
 			print ("Rerying...")
