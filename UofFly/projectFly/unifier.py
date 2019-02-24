@@ -120,7 +120,11 @@ if __name__ == "__main__" :
 						pairingCurrent["fuel"] = float(fuel) * float(flightData[x]["fuel"]) / 100.0
 						break
 				pairings.append(pairingCurrent)
-				print(pairingCurrent)
+				
+
+
+	sum_price = 0
+	sum_time = 0
 
 	min_price = 5000.0
 	max_price = 0.0
@@ -131,39 +135,24 @@ if __name__ == "__main__" :
 	weight_time = 1.0
 	weight_price = 0.0
 
-	min_fuel = 10000000.0
-	max_fuel = 0.0
-
 	sorted = []
 
 	for x in range(0,len(pairings)):
-		if float(pairings[x]["flight_hour"]) > max_travel_time:
-			max_travel_time = float(pairings[x]["flight_hour"])
 
-		if float(pairings[x]["flight_hour"]) < min_travel_time:
-			min_travel_time = float(pairings[x]["flight_hour"])
+		sum_time += float(pairings[x]["flight_hour"])
+		sum_price += float(pairings[x]["price"])
 
-		if float(pairings[x]["price"]) < min_price:
-			min_price = float(pairings[x]["price"])
-
-		if float(pairings[x]["price"]) > max_price:
-			max_price = float(pairings[x]["price"])
-
-		if float(pairings[x]["fuel"]) > max_price:
-			max_fuel = float(pairings[x]["fuel"])
-
-		if float(pairings[x]["fuel"]) < min_price:
-			min_fuel = float(pairings[x]["fuel"])
-
+	average_time = sum_time/len(pairings)
+	average_price = sum_price/len(pairings)
 	dif_price = max_price - min_price
 	dif_travel_time = max_travel_time - min_travel_time
 
 	for x in range(0,len(pairings)):
-		pairings[x]["rank"] = ((float(pairings[x]["flight_hour"]) - min_travel_time) * weight_time / dif_travel_time) 
-		+ ((float(pairings[x]["price"]) - min_price) * weight_price / dif_price) 
+		pairings[x]["rank"] = ((float(pairings[x]["flight_hour"]) - min_travel_time) * weight_time / average_time) 
+		+ ((float(pairings[x]["price"]) - min_price) * weight_price / average_price) 
 
 	mergeSort(pairings)
 
 	for x in range(0, len(pairings)):
-		print(pairings[x]["airline"])
+		print(pairings[x]["airline"] + "  " + pairings[x]["flight_number"] + " at " + pairings[x]["departure_time"] + " with a Peoria at " + pairings[x]["bus_time"] + " aircraft " + pairings[x]["aircraft"])
 		print(pairings[x]["fuel"])
