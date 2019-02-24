@@ -1,7 +1,7 @@
 # UofFly
-UofFly is an end-to-end travel solution that helps you book all your means of transportation to get from point A to point B without the hassle of 
-conventional booking. We give the user control over the factors he or she deems important such as duration of the flight and the cost and then 
-suggest the best travel options. We also provide Fuel per Seat information for those people who want to reduce their carbon footprint.
+UofFly is an end to end travel solution which allows students at the University of Illinois — Urbana Champaign to get the most ideal route to get to their homes across the world. 
+The app combines the schedules of Peoria Charter Bus Service to Chicago with flights out of O Hare International Airport, Chicago to find the most convenient combination of both. 
+Through data analysis, the algorithm ranks flights based on cost, duration and fuel efficiency in the order of importance given by the user.
 
 
 ## Getting Started
