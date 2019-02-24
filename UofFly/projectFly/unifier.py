@@ -3,6 +3,8 @@ import expedia
 import argparse
 import datetime
 import trip
+import requests
+import json
 
 def timeScorer(s):
 	if "pm" in s:
@@ -26,6 +28,14 @@ def timeScorer(s):
 
 def getTime(s):
 	return s.get('flight_hour') * 60
+
+def getDistance(org, dest):
+		URL = "https://www.distance24.org/route.json?stops="
+		URL = URL + org + "|" + dest
+		r = requests.get(url = URL)
+		data = r.json()
+		return data["distance"]
+		
 
 def mergeSort(arr): 
     if len(arr) >1: 
@@ -79,6 +89,8 @@ if __name__ == "__main__" :
 	flights = expedia.parse(source,destination,date)
 	pairings = []
 
+	fuel = getDistance(source, destination)
+
 	for bus in busses:
 		busTime = timeScorer(bus)
 		for flight in flights:
@@ -96,9 +108,19 @@ if __name__ == "__main__" :
 					'bus_time': bus,
 					'flight_hour': flight.get('flight_hour'),
 					'flight_minute': flight.get('flight_minute'),
-					'rank': 0.0
+					'rank': 0.0,
+					'fuel': 0.0
 				}
+
+				file = open("assets/FlightFuelData.json", "r")
+				flightData = json.loads(file.read())
+				pairingCurrent["fuel"] = float(fuel) / 100.0
+				for x in range(0,len(flightData)):
+					if flightData[x]["model"] == pairingCurrent["aircraft"]:
+						pairingCurrent["fuel"] = float(fuel) * float(flightData[x]["fuel"]) / 100.0
+						break
 				pairings.append(pairingCurrent)
+				print(pairingCurrent)
 
 	min_price = 5000.0
 	max_price = 0.0
@@ -108,6 +130,9 @@ if __name__ == "__main__" :
 
 	weight_time = 1.0
 	weight_price = 0.0
+
+	min_fuel = 10000000.0
+	max_fuel = 0.0
 
 	sorted = []
 
@@ -124,6 +149,12 @@ if __name__ == "__main__" :
 		if float(pairings[x]["price"]) > max_price:
 			max_price = float(pairings[x]["price"])
 
+		if float(pairings[x]["fuel"]) > max_price:
+			max_fuel = float(pairings[x]["fuel"])
+
+		if float(pairings[x]["fuel"]) < min_price:
+			min_fuel = float(pairings[x]["fuel"])
+
 	dif_price = max_price - min_price
 	dif_travel_time = max_travel_time - min_travel_time
 
@@ -135,3 +166,4 @@ if __name__ == "__main__" :
 
 	for x in range(0, len(pairings)):
 		print(pairings[x]["airline"])
+		print(pairings[x]["fuel"])
