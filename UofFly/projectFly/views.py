@@ -19,21 +19,24 @@ def index(request):
 			'flight_hour': None,
 			'fuel': None,
 			'airline': None,
-			'rank': None
+			'rank': None,
+			'bus_time': None
 		})
 		pairings.append({
 			'price': None,
 			'flight_hour': None,
 			'fuel': None,
 			'airline': None,
-			'rank': None
+			'rank': None,
+			'bus_time': None
 		})
 		pairings.append({
 			'price': None,
 			'flight_hour': None,
 			'fuel': None,
 			'airline': None,
-			'rank': None
+			'rank': None,
+			'bus_time': None
 		})
 
 	if request.method == 'POST':
