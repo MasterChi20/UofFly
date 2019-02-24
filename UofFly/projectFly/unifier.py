@@ -1,4 +1,4 @@
-import Scraper
+import scraper
 import expedia
 import argparse
 import datetime
@@ -42,7 +42,7 @@ if __name__ == "__main__" :
 
 	date = args.date
 	busses = []
-	busses = Scraper.peoria(formatDate)
+	busses = scraper.peoria(formatDate)
 	flights = expedia.parse(source,destination,date)
 	pairings = []
 
