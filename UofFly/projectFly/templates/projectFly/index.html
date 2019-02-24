@@ -1,282 +1,306 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>U of Fly</title>
+        <title>U of Fly</title>
 
         <!-- Bootstrap core CSS -->
-    <link href="projectFly/static/projectFly/css/style.css" rel="stylesheet" type="text/css">
+        <link href="projectFly/static/projectFly/css/style.css" rel="stylesheet" type="text/css">
 
-    <style type="text/css">
-      :root {
-        --input-padding-x: .75rem;
-        --input-padding-y: .75rem;
-      }
+        <style type="text/css">
+            :root {
+                --input-padding-x: .75rem;
+                --input-padding-y: .75rem;
+            }
 
-      #access {
-        margin-bottom: 50px;
-      }
+            #access {
+                margin-bottom: 50px;
+            }
 
-      .bg {
-        background: url("https://png2.kisspng.com/sh/b19f74f95e12af01a6e87ada42539faf/L0KzQYm3UsE5N6RxfZH0aYP2gLBuTfFqeqFxedDuLXHsgrT5gfZ1NZ10f9G2Y3zsgH7okwQuaZp3iN5qbnWwg7rziP92baV5fZ8AYUi8dIG4hvQ1a5M2SZCBNkm6SYO6UcE2OWkAUKM6NUG7R4K9TwBvbz==/kisspng-airplane-aircraft-logo-clip-art-airplane-silhouette-5a89d01fd4cb11.6697923115189811518716.png") no-repeat center center;
-        position: fixed;
-        width: 100%;
-        height: 700px; /*same height as jumbotron */
-        top:0;
-        left:0;
-        z-index: -1;
-      }
+            .bg {
+                background: url("https://png2.kisspng.com/sh/b19f74f95e12af01a6e87ada42539faf/L0KzQYm3UsE5N6RxfZH0aYP2gLBuTfFqeqFxedDuLXHsgrT5gfZ1NZ10f9G2Y3zsgH7okwQuaZp3iN5qbnWwg7rziP92baV5fZ8AYUi8dIG4hvQ1a5M2SZCBNkm6SYO6UcE2OWkAUKM6NUG7R4K9TwBvbz==/kisspng-airplane-aircraft-logo-clip-art-airplane-silhouette-5a89d01fd4cb11.6697923115189811518716.png") no-repeat center center;
+                position: fixed;
+                width: 100%;
+                height: 700px; /*same height as jumbotron */
+                top:0;
+                left:0;
+                z-index: -1;
+            }
 
-      .jumbotron {
-        height: 700px;
-        color: white;
-        text-shadow: #444 0 1px 1px;
-        background:transparent;
-      }
+            .jumbotron {
+                height: 700px;
+                color: white;
+                text-shadow: #444 0 1px 1px;
+                background:transparent;
+            }
 
-      .form-signin {
-        width: 100%;
-        max-width: 420px;
-        padding: 15px;
-        margin: 0 auto;
-        color: #133133;
-      }
+            .form-signin {
+                width: 100%;
+                max-width: 420px;
+                padding: 15px;
+                margin: 0 auto;
+                color: #133133;
+            }
 
-      .form-label-group {
-        position: relative;
-        margin-bottom: 1rem;
-      }
+            .form-label-group {
+                position: relative;
+                margin-bottom: 1rem;
+            }
 
-      .form-label-group > input,
-      .form-label-group > label {
-        padding: var(--input-padding-y) var(--input-padding-x);
-      }
+            .form-label-group > input,
+            .form-label-group > label {
+                padding: var(--input-padding-y) var(--input-padding-x);
+            }
 
-      .form-label-group > label {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        width: 100%;
-        margin-bottom: 0; /* Override default `<label>` margin */
-        line-height: 1.5;
-        color: #495057;
-        border: 1px solid transparent;
-        border-radius: .25rem;
-        transition: all .1s ease-in-out;
-      }
+            .form-label-group > label {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                margin-bottom: 0; /* Override default `<label>` margin */
+                line-height: 1.5;
+                color: #495057;
+                border: 1px solid transparent;
+                border-radius: .25rem;
+                transition: all .1s ease-in-out;
+            }
 
-      .form-label-group input::-webkit-input-placeholder {
-        color: transparent;
-      }
+            .form-label-group input::-webkit-input-placeholder {
+                color: transparent;
+            }
 
-      .form-label-group input:-ms-input-placeholder {
-        color: transparent;
-      }
+            .form-label-group input:-ms-input-placeholder {
+                color: transparent;
+            }
 
-      .form-label-group input::-ms-input-placeholder {
-        color: transparent;
-      }
+            .form-label-group input::-ms-input-placeholder {
+                color: transparent;
+            }
 
-      .form-label-group input::-moz-placeholder {
-        color: transparent;
-      }
+            .form-label-group input::-moz-placeholder {
+                color: transparent;
+            }
 
-      .form-label-group input::placeholder {
-        color: transparent;
-      }
+            .form-label-group input::placeholder {
+                color: transparent;
+            }
 
-      .form-label-group input:not(:placeholder-shown) {
-        padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
-        padding-bottom: calc(var(--input-padding-y) / 3);
-      }
+            .form-label-group input:not(:placeholder-shown) {
+                padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+                padding-bottom: calc(var(--input-padding-y) / 3);
+            }
 
-      .form-label-group input:not(:placeholder-shown) ~ label {
-        padding-top: calc(var(--input-padding-y) / 3);
-        padding-bottom: calc(var(--input-padding-y) / 3);
-        font-size: 12px;
-        color: #777;
-      }
+            .form-label-group input:not(:placeholder-shown) ~ label {
+                padding-top: calc(var(--input-padding-y) / 3);
+                padding-bottom: calc(var(--input-padding-y) / 3);
+                font-size: 12px;
+                color: #777;
+            }
 
-      .button {
-        width: 100%;
-        max-width: 420px;
-        padding: 15px;
-        margin: 0 auto;
-        color: #012086;
-      }
+            .button {
+                width: 100%;
+                max-width: 420px;
+                padding: 15px;
+                margin: 0 auto;
+                color: #012086;
+            }
 
-      .center {
-        margin: auto;
-        width: 50%;
-        border: 3px solid green;
-        padding: 10px;
-      }
+            .center {
+                margin: auto;
+                width: 50%;
+                border: 3px solid green;
+                padding: 10px;
+            }
 
-      .slider {
-        -webkit-appearance: none;
-        width: 100%;
-        height: 5px;
-        border-radius: 5px;   
-        background: #d3d3d3;
-        outline: none;
-        opacity: 0.7;
-        -webkit-transition: .2s;
-        transition: opacity .2s;
-      }
+            .slider {
+                -webkit-appearance: none;
+                width: 100%;
+                height: 5px;
+                border-radius: 5px;   
+                background: #d3d3d3;
+                outline: none;
+                opacity: 0.7;
+                -webkit-transition: .2s;
+                transition: opacity .2s;
+            }
 
-      .slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 15px;
-        height: 15px;
-        border-radius: 50%; 
-        background: #012086;
-        cursor: pointer;
-      }
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%; 
+                background: #012086;
+                cursor: pointer;
+            }
 
-      .slider::-moz-range-thumb {
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        background: #4CAF50;
-        cursor: pointer;
-      }
+            .slider::-moz-range-thumb {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                background: #4CAF50;
+                cursor: pointer;
+            }
 
-    </style>
+        </style>
 
-  </head>
+    </head>
 
-  <body>
-   
-  	<div class="bg"></div>
-<div class="jumbotron">
-</div> 
+    <body>
+        <div class="bg"></div>
+        <div class="jumbotron"></div> 
 
-<div class="container" >
-  <form class="form-signin" method="post">
-     {% csrf_token %}
-	  <div class="text-center mb-4">
+        <div class="container" >
+            <form class="form-signin" method="post">
+                {% csrf_token %}
+               <div class="text-center mb-4">
 
-         <img class="mb-4" src="https://png2.kisspng.com/sh/b19f74f95e12af01a6e87ada42539faf/L0KzQYm3UsE5N6RxfZH0aYP2gLBuTfFqeqFxedDuLXHsgrT5gfZ1NZ10f9G2Y3zsgH7okwQuaZp3iN5qbnWwg7rziP92baV5fZ8AYUi8dIG4hvQ1a5M2SZCBNkm6SYO6UcE2OWkAUKM6NUG7R4K9TwBvbz==/kisspng-airplane-aircraft-logo-clip-art-airplane-silhouette-5a89d01fd4cb11.6697923115189811518716.png" alt="" width="72" height="72">
+                    <img class="mb-4" src="https://png2.kisspng.com/sh/b19f74f95e12af01a6e87ada42539faf/L0KzQYm3UsE5N6RxfZH0aYP2gLBuTfFqeqFxedDuLXHsgrT5gfZ1NZ10f9G2Y3zsgH7okwQuaZp3iN5qbnWwg7rziP92baV5fZ8AYUi8dIG4hvQ1a5M2SZCBNkm6SYO6UcE2OWkAUKM6NUG7R4K9TwBvbz==/kisspng-airplane-aircraft-logo-clip-art-airplane-silhouette-5a89d01fd4cb11.6697923115189811518716.png" alt="" width="72" height="72">
 
-         <h1>UofFly</h1>
+                    <h1>UofFly</h1>
 
-         <p>From UIUC to the World.</p>
-      </div>
+                    <p>From UIUC to the World.</p>
+                </div>
 
-      <div class="form-label-group" >
-        <input type="text" id="departure_airport" class="form-control" placeholder="Departure Aiport" name = "departure_airport" required autofocus>
-        <label for="inputEmail">Departing Airport</label>
-      </div>
+                <div class="form-label-group" >
+                    <input type="text" id="departure_airport" class="form-control" placeholder="Departure Aiport" name = "departure_airport" required autofocus>
+                    <label for="inputEmail">Departing Airport</label>
+                </div>
 
-      <div class="form-label-group">
-        <input type="text" id="arrival_airport" class="form-control" placeholder="Arrival Airport" name = "arrival_airport" required>
-        <label for="inputPassword">Arriving Airport</label>
-      </div>
+                <div class="form-label-group">
+                    <input type="text" id="arrival_airport" class="form-control" placeholder="Arrival Airport" name = "arrival_airport" required>
+                    <label for="inputPassword">Arriving Airport</label>
+                </div>
 
-      <div class="form-label-group">
-        <input type="date" id="inputDate" class="form-control" placeholder="Enter Date" name = "input_date" required>
-        <label for="inputPassword">Date of Departure</label>
-      </div>
-      <br>
-	<center>
-      <p>Choose what is more important to you:</p>
-     <h5>Cost vs Duration of Flight.</h5></center>
+                <div class="form-label-group">
+                    <input type="date" id="inputDate" class="form-control" placeholder="Enter Date" name = "input_date" required>
+                    <label for="inputPassword">Date of Departure</label>
+                </div>
+                
+                <br>
 
-<img src="https://www.freeiconspng.com/uploads/dollar-black-circle-icon-28.png" width="32" height="32" align="left">   
+               <center>
+                    <p>
+                        Choose what is more important to you:
+                    </p>
+                    <h5>
+                        Cost vs Duration of Flight
+                    </h5>
+                </center>
 
-<img src="https://cdn0.iconfinder.com/data/icons/feather/96/clock-512.png" width="32" height="32" align="right">   
+                <img src="https://www.freeiconspng.com/uploads/dollar-black-circle-icon-28.png" width="32" height="32" align="left">   
 
-      <div class="slidecontainer">
-  		<input type="range" min="1" max="100" value="50" class="slider" name = "slider" id="myRange">
-	  </div> <br>
+                <img src="https://cdn0.iconfinder.com/data/icons/feather/96/clock-512.png" width="32" height="32" align="right">   
 
-      <div class="checkbox mb-3">
-        <center>
-        <label>
-          <input type="checkbox" value="ecofriendly"> Give Eco-Friendly Options
-        </label>
-      </center>
-      </div>
-     <div class="button">
-      <button class="btn btn-lg btn-primary btn-block" type="submit" value = "submit">Search Travel Routes</button>
-          </div>
+                <div class="slidecontainer">
+		                <input type="range" min="1" max="100" value="50" class="slider" name = "slider" id="myRange">
+               </div>
 
-      <p class="mt-5 mb-3 text-muted text-center">&copy; Dhruv, Chirag, Nitish, Yatharth, Siddhant, Anirudh</p>
-    </form>
+                <br>
+
+                <div class="checkbox mb-3">
+                    <center>
+                        <label>
+                            <input type="checkbox" value="ecofriendly"> Give Eco-Friendly Options
+                        </label>
+                    </center>
+                </div>
+                
+                <div class="button">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" value = "submit">Search Travel Routes</button>
+                </div>
+
+                <p class="mt-5 mb-3 text-muted text-center"
+                    >&copy; Dhruv, Chirag, Nitish, Yatharth, Siddhant, Anirudh
+                </p>
+            </form>
 
 
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-         <h1 class="h3 mb-3 font-weight-normal">Results</h1>
-      <p>Below are the results of the search ranked based on your preferences.</p>
-    </div>
+            <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+                <h1 class="h3 mb-3 font-weight-normal">
+                    Results
+                </h1>
+                
+                <p>
+                    Below are the results of the search ranked based on your preferences.
+                </p>
+            </div>
 
-    <div class="container">
-      <div class="card-deck mb-3 text-center">
-        <div class="card mb-4 box-shadow">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal">Best</h4>
-          </div>
-          <div class="card-body">
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>Price: {{first.price}}</li>
-              <li>Duration: {{first.flight_hour}}</li>
-              <li>Fuel: {{first.fuel}}</li>
-              <li>Airline: {{first.airline}}</li>
-            </ul>
-          </div>
+            <div class="container">
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">
+                                Best
+                            </h4>
+                        </div>
+                        
+                        <div class="card-body">
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Price: {{first.price}}</li>
+                                <li>Duration: {{first.flight_hour}}</li>
+                                <li>Fuel: {{first.fuel}}</li>
+                                <li>Airline: {{first.airline}}</li>
+                            </ul>   
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">Second Best</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Price: {{second.price}}</li>
+                                <li>Duration: {{second.flight_hour}}</li>
+                                <li>Fuel: {{second.fuel}}</li>
+                                <li>Airline: {{second.airline}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">Third Best</h4>
+                        </div>
+      
+                        <div class="card-body">
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Price: {{third.price}}</li>
+                                <li>Duration: {{third.flight_hour}}</li>
+                                <li>Fuel: {{third.fuel}}</li>
+                                <li>Airline: {{third.airline}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            
+            <script type="text/javascript">
+                var jumboHeight = $('.jumbotron').outerHeight();
+                function parallax(){
+                    var scrolled = $(window).scrollTop();
+                    $('.bg').css('height', (jumboHeight-scrolled) + 'px');
+                }
+
+                $(window).scroll(function(e){
+                    parallax();
+                });
+            </script>
         </div>
-        <div class="card mb-4 box-shadow">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal">Second Best</h4>
-          </div>
-          <div class="card-body">
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>Price: {{second.price}}</li>
-              <li>Duration: {{second.flight_hour}}</li>
-              <li>Fuel: {{second.fuel}}</li>
-              <li>Airline: {{second.airline}}</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card mb-4 box-shadow">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal">Third Best</h4>
-          </div>
-          <div class="card-body">
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>Price: {{third.price}}</li>
-              <li>Duration: {{third.flight_hour}}</li>
-              <li>Fuel: {{third.fuel}}</li>
-              <li>Airline: {{third.airline}}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-</div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-      var jumboHeight = $('.jumbotron').outerHeight();
-      function parallax(){
-          var scrolled = $(window).scrollTop();
-          $('.bg').css('height', (jumboHeight-scrolled) + 'px');
-      }
-
-      $(window).scroll(function(e){
-          parallax();
-      });
-    </script>
-
-  </body>
+    </body>
 </html>
