@@ -2,7 +2,6 @@ import json
 import requests
 from lxml import html
 from collections import OrderedDict
-import argparse
 
 def parse(source,destination,date):
 	for i in range(5):
@@ -80,20 +79,8 @@ def parse(source,destination,date):
 		return {"error":"failed to process the page",}
 
 
-if __name__=="__main__":
-	
-	argparser = argparse.ArgumentParser()
-	argparser.add_argument('source',help = 'Source airport code')
-	argparser.add_argument('destination',help = 'Destination airport code')
-	argparser.add_argument('date',help = 'MM/DD/YYYY')
-
-	args = argparser.parse_args()
-	source = args.source
-	destination = args.destination
-	date = args.date
+def callExpedia(source, destination, date):
 	
 	print ("Fetching flight details")
 	scraped_data = parse(source,destination,date)
-
-	 	
-print("END")
+	return scraped_data

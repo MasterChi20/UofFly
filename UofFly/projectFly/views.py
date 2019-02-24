@@ -7,8 +7,16 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 
+from . import unifier
+
 
 def index(request):
-    context = {}
+    print(request.POST)
+    pairings = unifier.runner("Chicago", "Dubai", "04/04/2019", 1.0, 0.0)
+    context = {
+    	'first': pairings[0],
+    	'second': pairings[1],
+    	'third': pairings[2]
+    }
     return render(request, 'projectFly/index.html', context)
 

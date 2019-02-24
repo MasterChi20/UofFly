@@ -1,8 +1,6 @@
-import scraper
-import expedia
-import argparse
+from . import expedia
+from . import scraper
 import datetime
-import trip
 import requests
 import json
 
@@ -69,21 +67,12 @@ def mergeSort(arr):
             j+=1
             k+=1
 
-if __name__ == "__main__" :
-	argparser = argparse.ArgumentParser()
-	argparser.add_argument('source',help = 'Source airport code')
-	argparser.add_argument('destination',help = 'Destination airport code')
-	argparser.add_argument('date',help = 'MM/DD/YYYY')
+def runner(source, destination, date, weight_time, weight_price):
 
 
 
-	args = argparser.parse_args()
-	source = args.source
-	destination = args.destination
-	date = args.date
 	formatDate = datetime.datetime.strptime(date, "%d/%m/%Y").strftime("%Y-%m-%d")
-
-	date = args.date
+	scraper.callPeoria(formatDate)
 	busses = []
 	busses = scraper.peoria(formatDate)
 	flights = expedia.parse(source,destination,date)
@@ -112,7 +101,7 @@ if __name__ == "__main__" :
 					'fuel': 0.0
 				}
 
-				file = open("assets/FlightFuelData.json", "r")
+				file = open("projectFly/assets/FlightFuelData.json", "r")
 				flightData = json.loads(file.read())
 				pairingCurrent["fuel"] = float(fuel) / 100.0
 				for x in range(0,len(flightData)):
@@ -132,9 +121,6 @@ if __name__ == "__main__" :
 	min_travel_time = 72.0
 	max_travel_time = 0.0
 
-	weight_time = 1.0
-	weight_price = 0.0
-
 	sorted = []
 
 	for x in range(0,len(pairings)):
@@ -152,7 +138,4 @@ if __name__ == "__main__" :
 		+ ((float(pairings[x]["price"]) - min_price) * weight_price / average_price) 
 
 	mergeSort(pairings)
-
-	for x in range(0, len(pairings)):
-		print(pairings[x]["airline"] + "  " + pairings[x]["flight_number"] + " at " + pairings[x]["departure_time"] + " with a Peoria at " + pairings[x]["bus_time"] + " aircraft " + pairings[x]["aircraft"])
-		print(pairings[x]["fuel"])
+	return pairings
