@@ -54,7 +54,7 @@ ROOT_URLCONF = 'UofFly.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['projectFly/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

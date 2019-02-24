@@ -1,0 +1,194 @@
+[
+  {
+    "model": "Airbus A330-200",
+    "fuel": 3.32
+  },
+  {
+    "model": "Airbus A330neo-800",
+    "fuel": 2.75
+  },
+  {
+    "model": "Airbus A330neo-900",
+    "fuel": 2.48
+  },
+  {
+    "model": "Airbus A340-300",
+    "fuel": 3.49
+  },
+  {
+    "model": "Airbus A350-900",
+    "fuel": 2.39
+  },
+  {
+    "model": "Airbus A350-900",
+    "fuel": 2.81
+  },
+  {
+    "model": "Airbus A380",
+    "fuel": 3.27
+  },
+  {
+    "model": "Airbus A380",
+    "fuel": 3.16
+  },
+  {
+    "model": "Boeing 747-400",
+    "fuel": 3.34
+  },
+  {
+    "model": "Boeing 747-8",
+    "fuel": 2.82
+  },
+  {
+    "model": "Boeing 747-8",
+    "fuel": 3.35
+  },
+  {
+    "model": "Boeing 777-200ER",
+    "fuel": 3.08
+  },
+  {
+    "model": "Boeing 777-200ER",
+    "fuel": 3.09
+  },
+  {
+    "model": "Boeing 777-200LR",
+    "fuel": 3.25
+  },
+  {
+    "model": "Boeing 777-300ER",
+    "fuel": 2.91
+  },
+  {
+    "model": "Boeing 777-300ER",
+    "fuel": 3.11
+  },
+  {
+    "model": "Boeing 777-9X",
+    "fuel": 2.85
+  },
+  {
+    "model": "Boeing 787-8",
+    "fuel": 2.77
+  },
+  {
+    "model": "Boeing 787-9",
+    "fuel": 2.49
+  },
+  {
+    "model": "Boeing 787-9",
+    "fuel": 2.31
+  },
+  {
+    "model": "Boeing 787-9",
+    "fuel": 3.08
+  },
+  {
+    "model": "Airbus A320",
+    "fuel": 2.43
+  },
+  {
+    "model": "Airbus A321NeoLR",
+    "fuel": 2.43
+  },
+  {
+    "model": "Airbus A330-200",
+    "fuel": 3.11
+  },
+  {
+    "model": "Airbus A330-300",
+    "fuel": 2.98
+  },
+  {
+    "model": "Airbus A330neo-900",
+    "fuel": 2.42
+  },
+  {
+    "model": "Airbus A340-300",
+    "fuel": 3.25
+  },
+  {
+    "model": "Boeing 737 MAX-8",
+    "fuel": 2.13
+  },
+  {
+    "model": "Boeing 737 MAX-9",
+    "fuel": 2.53
+  },
+  {
+    "model": "Boeing 747-400",
+    "fuel": 3.24
+  },
+  {
+    "model": "Boeing 747-8",
+    "fuel": 2.65
+  },
+  {
+    "model": "Boeing 757-200W",
+    "fuel": 3
+  },
+  {
+    "model": "Boeing 767-200ER",
+    "fuel": 3.34
+  },
+  {
+    "model": "Boeing 767-200ER",
+    "fuel": 3.25
+  },
+  {
+    "model": "Boeing 767-200ER",
+    "fuel": 2.75
+  },
+  {
+    "model": "Boeing 767-300ER",
+    "fuel": 3.09
+  },
+  {
+    "model": "Boeing 767-300ER",
+    "fuel": 3.09
+  },
+  {
+    "model": "Boeing 767-300ER",
+    "fuel": 2.56
+  },
+  {
+    "model": "Boeing 767-400ER",
+    "fuel": 2.95
+  },
+  {
+    "model": "Boeing 767-400ER",
+    "fuel": 2.44
+  },
+  {
+    "model": "Boeing 767-400ER",
+    "fuel": 2.43
+  },
+  {
+    "model": "Boeing 777-200",
+    "fuel": 2.8
+  },
+  {
+    "model": "Boeing 777-200ER",
+    "fuel": 2.89
+  },
+  {
+    "model": "Boeing 777-300",
+    "fuel": 2.68
+  },
+  {
+    "model": "Boeing 787-8",
+    "fuel": 2.26
+  },
+  {
+    "model": "Boeing 787-8",
+    "fuel": 2.68
+  },
+  {
+    "model": "Boeing 787-9",
+    "fuel": 2.37
+  },
+  {
+    "model": "Irkut MC-21",
+    "fuel": 2.33
+  }
+]
