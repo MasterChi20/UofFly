@@ -35,7 +35,8 @@ def index(request):
 
 	if request.method == 'POST':
 		print(request.POST['departure_airport'])
-		pairings = unifier.runner(request.POST['departure_airport'], request.POST['arrival_airport'], request.POST['input_date'], 1.0, 0.0)
+		pairings = unifier.runner(request.POST['departure_airport'], request.POST['arrival_airport'], 
+			request.POST['input_date'], 1.0 - (float(request.POST['slider']) / 100.0), (float(request.POST['slider']) / 100.0))
 
 
 	context = {
