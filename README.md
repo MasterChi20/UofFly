@@ -1,4 +1,4 @@
-# UofFlyAn
+# UofFly
 UofFly is an end-to-end travel solution that helps you book all your means of transportation to get from point A to point B without the hassle of 
 conventional booking. We give the user control over the factors he or she deems important such as duration of the flight and the cost and then 
 suggest the best travel options. We also provide Fuel per Seat information for those people who want to reduce their carbon footprint.
