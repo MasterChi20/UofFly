@@ -20,6 +20,8 @@ class Leg:
 		file = open("assets/FlightFuelData.json", "r")
 		flightData = json.loads(file.read())
 		self.fuel = int(data["distance"])
+		if self.mode == "bus":
+			return self.fuel
 		for x in range(0,len(flightData)):
 			if flightData[x]["model"] == self.flight:
 				a = float(data["distance"])
@@ -35,19 +37,10 @@ class Trip:
 		self.legs = []
 		self.rank = 0
 		self.totalFuel = 0
+		self.totalTime = 0
 
 	def addLeg(self, mode, org, dest, time, duration, price, flight):
 		currentLeg = Leg(mode, org, dest, time, duration, price, flight)
 		currentLeg.getFuel()
 		self.totalFuel = self.totalFuel + currentLeg.fuel
 		self.legs.append(currentLeg)
-
-
-
-		
-
-if __name__ == '__main__':
-	trip = Trip()
-	trip.addLeg("flight", "Chicago", "Berlin", "12:00", 20, 1000, "Airbus A330-200")
-	print(trip.totalFuel)
-
