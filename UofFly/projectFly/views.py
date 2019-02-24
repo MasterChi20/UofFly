@@ -18,26 +18,28 @@ def index(request):
 			'price': None,
 			'flight_hour': None,
 			'fuel': None,
-			'airline': None
+			'airline': None,
+			'rank': None
 		})
 		pairings.append({
 			'price': None,
 			'flight_hour': None,
 			'fuel': None,
-			'airline': None
+			'airline': None,
+			'rank': None
 		})
 		pairings.append({
 			'price': None,
 			'flight_hour': None,
 			'fuel': None,
-			'airline': None
+			'airline': None,
+			'rank': None
 		})
 
 	if request.method == 'POST':
 		print(request.POST['departure_airport'])
 		pairings = unifier.runner(request.POST['departure_airport'], request.POST['arrival_airport'], 
-			request.POST['input_date'], 1.0 - (float(request.POST['slider']) / 100.0), (float(request.POST['slider']) / 100.0))
-
+			request.POST['input_date'], float(request.POST['slider']), 100.0 - float(request.POST['slider']))
 
 	context = {
     	'first': pairings[0],

@@ -115,11 +115,6 @@ def runner(source, destination, date, weight_time, weight_price):
 	sum_price = 0
 	sum_time = 0
 
-	min_price = 5000.0
-	max_price = 0.0
-
-	min_travel_time = 72.0
-	max_travel_time = 0.0
 
 	sorted = []
 
@@ -130,12 +125,13 @@ def runner(source, destination, date, weight_time, weight_price):
 
 	average_time = sum_time/len(pairings)
 	average_price = sum_price/len(pairings)
-	dif_price = max_price - min_price
-	dif_travel_time = max_travel_time - min_travel_time
+
+	print(average_time)
+	print(average_price)
 
 	for x in range(0,len(pairings)):
-		pairings[x]["rank"] = ((float(pairings[x]["flight_hour"]) - min_travel_time) * weight_time / average_time) 
-		+ ((float(pairings[x]["price"]) - min_price) * weight_price / average_price) 
+		pairings[x]["rank"] = ((float(pairings[x]["flight_hour"])) * weight_time / average_time) 
+		+ ((float(pairings[x]["price"])) * weight_price / average_price) 
 
 	mergeSort(pairings)
 	return pairings
