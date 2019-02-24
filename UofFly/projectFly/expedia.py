@@ -61,10 +61,12 @@ def parse(source,destination,date):
 						arrival_time = timeline.get('arrivalTime',{}).get('time','')
 						flight_timing = {
 											'departure_airport':departure_airport,
+											'flight_hour' : flight_hour,
+											'flight_minutes': flight_minutes,
 											'departure_time':departure_time,
 											'price': exact_price,
 											'aircraft':plane,
-											'flight_number': plane_code,
+											'flight_number': timeline.get('carrier').get('flightNumber'),
 											'airline': airline_name,
 											'arrival_airport':arrival_airport,
 											'arrival_time':arrival_time
@@ -92,17 +94,6 @@ if __name__=="__main__":
 	
 	print ("Fetching flight details")
 	scraped_data = parse(source,destination,date)
-	for x in scraped_data:
-		print("Airline is - " + x.get('airline'))
-		print("Depart at - " + x.get('departure_time'))
-		print("Arrival at - " + x.get('arrival_time'))
-		print("Price is - ")  
-		print(x.get('price'))
-	'''
-	print ("Writing data to output file")
-	with open('%s-%s-flight-results.json'%(source,destination),'w') as fp:
-	 	json.dump(scraped_data,fp,indent = 4)
-	'''
 
 	 	
 print("END")

@@ -23,6 +23,9 @@ def timeScorer(s):
 
 	return score
 
+def getTime(s):
+	return s.get('flight_hour') * 60
+
 if __name__ == "__main__" :
 	argparser = argparse.ArgumentParser()
 	argparser.add_argument('source',help = 'Source airport code')
@@ -48,7 +51,6 @@ if __name__ == "__main__" :
 		for flight in flights:
 			flightTime = timeScorer(flight.get('departure_time'))
 			if (flightTime - busTime) > 420 and (flightTime - busTime) < 600:
-				print(flightTime - busTime)
 				pairingCurrent = {
 				                    'departure_airport':flight.get('departure_airport'),
 									'departure_time':flight.get('departure_time'),
@@ -58,12 +60,20 @@ if __name__ == "__main__" :
 									'airline': flight.get('airline'),
 									'arrival_airport': flight.get('arrival_airport'),
 									'arrival_time':flight.get('arrival_time'),
-									'bus_time': bus
+									'bus_time': bus,
+									'flight_hour': flight.get('flight_hour'),
+									'flight_minute': flight.get('flight_minute')
 				}
 				pairings.append(pairingCurrent)
+	sorted = []
+	#score = getTime(s)
+	for pairing in pairings:
+		print(pairing)
+
 	for i in pairings:
-		print(len(pairings))
-		print(i)
+		time = i.get('flight_hour') * 60 
+		print(" Take the Peoria at " + i.get('bus_time') + " with flight " + i.get('airline') + " " + i.get('flight_number') + " in ")
+		print(time)
 
 
 
