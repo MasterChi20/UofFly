@@ -88,6 +88,21 @@
   color: #777;
 }
 
+.button {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: 0 auto;
+  color: #012086;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
 .slider {
   -webkit-appearance: none;
   width: 100%;
@@ -106,7 +121,7 @@
   width: 15px;
   height: 15px;
   border-radius: 50%; 
-  background: url(https://png2.kisspng.com/sh/b19f74f95e12af01a6e87ada42539faf/L0KzQYm3UsE5N6RxfZH0aYP2gLBuTfFqeqFxedDuLXHsgrT5gfZ1NZ10f9G2Y3zsgH7okwQuaZp3iN5qbnWwg7rziP92baV5fZ8AYUi8dIG4hvQ1a5M2SZCBNkm6SYO6UcE2OWkAUKM6NUG7R4K9TwBvbz==/kisspng-airplane-aircraft-logo-clip-art-airplane-silhouette-5a89d01fd4cb11.6697923115189811518716.png) no-repeat, #000000;
+  background: #012086;
   cursor: pointer;
 }
 
